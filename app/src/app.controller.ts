@@ -49,7 +49,7 @@ export class AppController {
   }
 
   private respond(reply: FastifyReply<any>, results: any, errors?: string[]) {
-    if (errors.length) {
+    if (errors && errors.length) {
       reply.header('X-DATASOURCE-ERR', errors.join('. '));
     }
 
