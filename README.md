@@ -13,7 +13,7 @@ API server for the Grafana [SimpleJson plugin](https://grafana.com/plugins/grafa
 
 ## Usage
 ```
-git clone git@github.com:shirish87/grafana-simplejson-gateway.git
+git clone git@github.com:dotslashlabs/grafana-simplejson-gateway.git
 cd grafana-simplejson-gateway
 make deploy
 ```
