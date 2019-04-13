@@ -12,7 +12,7 @@ RUN mkdir -p /var/www/{.npm,.node-gyp,app} /var/www/app/app
 RUN npm install -g typescript@$TSC_VERSION @nestjs/cli
 
 WORKDIR /var/www/app/app
-COPY ./app/package.json ./app/package-lock*.json ./
+COPY ./app/package.json ./app/package-lock.json ./
 RUN npm install --quiet --production
 
 COPY ./app .
