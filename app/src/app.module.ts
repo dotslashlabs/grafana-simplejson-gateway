@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { ConfigModule } from './config.module';
 import { CommonModule } from './common/common.module';
 import { DummyModule } from './dummy/dummy.module';
-import { MyDataModule } from './my-data/my-data.module';
 
 @Module({
   imports: [
@@ -13,8 +12,6 @@ import { MyDataModule } from './my-data/my-data.module';
     CommonModule,
 
     DummyModule,
-
-    MyDataModule,
   ],
   controllers: [AppController],
 })
