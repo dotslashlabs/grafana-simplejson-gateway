@@ -1,0 +1,27 @@
+FROM node:10-slim
+
+ENV TSC_VERSION 3.2.4
+
+ARG NODE_ENV=development
+ENV NODE_ENV $NODE_ENV
+
+ARG PORT=3000
+ENV PORT $PORT
+
+ARG DEBUG_PORT=9229
+ENV DEBUG_PORT $DEBUG_PORT
+
+RUN mkdir -p /var/www/{.npm,.node-gyp,app} /var/www/app/app
+RUN npm install -g typescript@$TSC_VERSION @nestjs/cli tsc-watch
+
+WORKDIR /var/www/app/app
+COPY ./app/package.json ./app/package-lock*.json ./
+RUN npm install --quiet
+
+COPY ./app .
+
+ENV NODE_OPTIONS "--inspect-port=${DEBUG_PORT}"
+
+RUN echo 'alias dev="npm run start:dev"' >> ~/.bashrc
+
+CMD ["/bin/bash"]

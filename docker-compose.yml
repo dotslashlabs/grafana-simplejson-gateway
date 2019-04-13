@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - ${PORT:-3000}:3000
+    env_file:
+      - ./app/secrets.env
+    volumes:
+      - /var/www/app/app/node_modules
