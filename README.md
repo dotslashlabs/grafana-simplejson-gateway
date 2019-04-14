@@ -58,7 +58,7 @@ export class MyDataModule {}
 
 ## Docker Configuration
 
-* Set environment variable `PROJECT_NAME` in `project.env`. This serves as a prefix for the resultant docker containers
+* Set environment variable `COMPOSE_PROJECT_NAME` in `project.env`. This serves as a prefix for the resultant docker containers
 * Configure ports in `docker-compose.yml` (production) or `docker-compose.dev.yml` (development)
 
 
